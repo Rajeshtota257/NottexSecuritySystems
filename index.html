@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NottEx Security Systems — CCTV & Security Solutions</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+  background: #f7f9fc;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  padding: 18px 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  border-bottom: 1px solid #ddd;
+  transition: 0.4s ease;
+}
+nav.scrolled {
+  background: #003366;
+  padding: 10px 0;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 45px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  transition: 0.3s;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ff7b00;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #ff7b00;
+}
+
+/* SECTIONS */
+section {
+  padding: 120px 8% 80px;
+  min-height: 70vh;
+  text-align: center;
+}
+
+/* HOME */
+#home h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+#home h2 {
+  font-size: 22px;
+  color: #555;
+  margin-bottom: 20px;
+}
+#home p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+#home a {
+  background:#008000; 
+  padding:14px 22px; 
+  border-radius:10px; 
+  color:white; 
+  font-weight:700; 
+  text-decoration:none;
+}
+
+/* SERVICES */
+#services ul {
+  list-style: none;
+  padding: 0;
+  font-size: 20px;
+  line-height: 36px;
+}
+#services li {
+  margin: 12px 0;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+.gallery img:hover { transform: scale(1.05); }
+
+/* LIGHTBOX */
+#lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+#lightbox img {
+  width: 80%;
+  max-width: 900px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+}
+
+/* REVIEW SLIDER */
+.review-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.review-track {
+  display: flex;
+  gap: 30px;
+  animation: slide 20s linear infinite;
+}
+.review-box {
+  background: #fff;
+  padding: 22px;
+  border-radius: 12px;
+  min-width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+@keyframes slide {
+  0%{ transform:translateX(0); }
+  100%{ transform:translateX(-50%); }
+}
+
+/* FOOTER */
+footer {
+  background:#001933;
+  color:white;
+  padding:40px 20px;
+  text-align:center;
+}
+footer a {
+  color:white;
+  font-size:22px;
+  margin: 0 10px;
+}
+
+/* GOOGLE MAP */
+.map {
+  width:100%;
+  height:300px;
+  border-radius:10px;
+  box-shadow:0 3px 8px rgba(0,0,0,0.4);
+}
+
+/* FLOATING BUTTONS */
+.whatsapp-btn, .quick-btn {
+  position: fixed;
+  right: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.whatsapp-btn {
+  bottom: 20px;
+  background: #25D366;
+  padding: 12px 20px;
+  border-radius: 50px;
+}
+.quick-btn {
+  bottom: 90px;
+  flex-direction: column;
+  gap: 10px;
+}
+.quick-btn a {
+  display: block;
+  background:#34b7f1;
+  color:white;
+  padding:10px 14px;
+  border-radius:25px;
+}
+.quick-btn a.call-now {
+  background:#ff4d4d;
+  border-radius:40px;
+  padding:12px 18px;
+}
+@media(max-width:768px){
+  nav ul { gap: 20px; }
+  section { padding: 100px 5% 60px; }
+  #home h1 { font-size:28px; }
+  #home h2 { font-size:18px; }
+  #home p { font-size:16px; }
+  .review-box { min-width: 250px; }
+  .gallery img { height:150px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <ul id="menuList">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+  <h1>NottEx <span style="color:#003366;">Security Systems</span></h1>
+  <h2>CCTV | Security Alarms | Installation & AMC Support</h2>
+  <p>Reliable security solutions for homes, businesses & industries.</p>
+  <a href="upi://pay?pa=nottex@upi&pn=NottEx%20Security&am=1">💳 Pay Online / UPI</a>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>Our Services</h2>
+  <ul>
+    <li>📍 CCTV Installation & Maintenance</li>
+    <li>🔔 Security Alarm Systems</li>
+    <li>🛠️ Installation & On-Site Service Support</li>
+    <li>♻ AMC (Annual Maintenance Contracts)</li>
+  </ul>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <h2>Installation & Product Gallery</h2>
+  <div class="gallery">
+    <img src="image1.png" alt="CCTV Installation" onclick="openLightbox(this.src)">
+    <img src="image2.png" alt="Security Alarm" onclick="openLightbox(this.src)">
+    <img src="image3.png" alt="Professional Installation" onclick="openLightbox(this.src)">
+    <img src="image4.png" alt="AMC Service" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="">
+</div>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <h2>Customer Reviews ⭐⭐⭐⭐⭐</h2>
+  <div class="review-slider">
+    <div class="review-track">
+      <div class="review-box">"Excellent installation & fast support!" — Praveen</div>
+      <div class="review-box">"Quality cameras & good AMC support." — Ramesh</div>
+      <div class="review-box">"Professional and reasonable pricing." — Anusha</div>
+      <div class="review-box">"Highly recommended for home security." — Priya</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p><strong>Phone:</strong> +91 95024 24546, +91 96661 87717</p>
+  <p><strong>Email:</strong> nottex09@gmail.com</p>
+  <p><strong>Location:</strong> OU Colony, RL Nagar, Rampally</p>
+
+  <iframe class="map"
+    src="https://www.google.com/maps/embed?pb=!1m18..."
+    loading="lazy">
+  </iframe>
+</section>
+
+<!-- WHATSAPP FLOATING -->
+<a class="whatsapp-btn" href="https://wa.me/919502424546">
+  WhatsApp Chat
+</a>
+
+<!-- QUICK ACTION BUTTONS -->
+<div class="quick-btn">
+  <a href="https://wa.me/919502424546?text=Need%20CCTV%20installation">📌 CCTV Installation</a>
+  <a href="https://wa.me/919502424546?text=AMC%20Service%20pricing">🛠 AMC Quote</a>
+  <a class="call-now" href="tel:+919502424546">📞 Call Now</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 NottEx Security Systems | All Rights Reserved</p>
+  <a href="#">🌐</a>
+  <a href="#">📘</a>
+  <a href="#">📸</a>
+</footer>
+
+<script>
+const navbar = document.getElementById("navbar");
+window.addEventListener("scroll", () => {
+  navbar.classList.toggle("scrolled", window.scrollY > 50);
+});
+function openLightbox(src){
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").style.display="flex";
+}
+function closeLightbox(){
+  document.getElementById("lightbox").style.display="none";
+}
+</script>
+
+</body>
+</html>
